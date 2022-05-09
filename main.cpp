@@ -18,14 +18,27 @@ public:
       currentTime = 0;
     }
 
+    QString channel = "prima_cool";
+    QString quality = "hq";
+
+    QMap<QString, QString> id_map;
+    id_map["prima_family"] = "id-p111013";
+    id_map["prima_cool"] = "id-p111014";
+    id_map["prima_zoom"] = "id-p111015";
+    id_map["prima_love"] = "id-p111016";
+    id_map["prima_max"] = "id-p111017";
+    id_map["prima_krimi"] = "id-p432829";
+    id_map["prima_star"] = "id-p846043";
+    id_map["prima_show"] = "id-p899572";
+
+    QString api_url = "https://api.play-backend.iprima.cz/api/v1/products/" +
+                      id_map[channel] + "/play";
+
     QMap<QString, QString> cookie_map;
 
     cookie_map["prima_family"] = "OdgM1iCkqWOqr5BWPbiozA==,1652124704";
     cookie_map["prima_cool"] = "gr6hcL9RWmVgjLeMoIeOnw==,1652114961";
     cookie_map["prima_max"] = "RtNXiWVakNRqIhtwk2wizA==,1652125182";
-
-    QString channel = "prima_family";
-    QString quality = "hq";
 
     QString url = "https://prima-ott-live-sec.ssl.cdn.cra.cz/" +
                   cookie_map[channel] + "/channels/" + channel +
